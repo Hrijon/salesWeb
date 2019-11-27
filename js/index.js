@@ -1,12 +1,8 @@
-// file: ex1/js/index.js
-// purpose: js code for a rudimentary single page application
-// author: Hong Xie
-// date: 7/10/2018
-// last update: 6/10/2019
-
-var page = ["#home", "#cpu", "#gpu", '#motherboard', '#ram',
-			'#monitor', '#pccase', '#cpucooling', '#mouse', '#keyboard', 
-			'#psu', '#i5', '#profile', '#cart'];
+var page = ["#home", "#cpu", "#gpu", '#mobo', '#ram',
+	   '#moni', '#pcc', '#cpuc', '#mouse', '#kb', 
+	   '#psu', '#i5', '#profile', '#cart', '#profile',
+	   '#help', '#about', '#buy', '#acc', '#lpt', '#welcome',
+	   '#search'];
      // each value is used as a hash for an address
      // and it is doubled up as the id for a view
 var curPage = page[0];

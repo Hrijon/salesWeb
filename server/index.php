@@ -2,25 +2,27 @@
 <html> 
   <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel='stylesheet' href='../css/styles.css'>
+		<link rel='stylesheet' href='css/styles.css'>
         <title>Index Page</title>
-	<script type="text/javascript" src="../js/script.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="../js/jquery-3.3.1.js"></script>	
-	<script src="../js/index.js"></script>
+<script src="js/jquery-3.3.1.js"></script>	
+	<script src="js/index.js"></script>
 
   </head>
   
 <body style = "text-align:center;">  
   
 <div class='header'>       
-	<form action="../server/search.php" method="POST">
-		  <strong class='title'>B&R PC</strong>
-          <input class='search-bar' type='text'  placeholder='Search...' name='query' style = "width:50%; height:35px;")/>
-          <input class="search-btn" type="submit" name="search" value="Search"/>
-	</form>	
+		<strong class='title' style='float:left;'>B&R PC</strong>
+	<form action="../server/search.php" method="POST" target='myframe'>
+	         <input class='search-bar' type='text'  placeholder='Search...' name='query' style = "width:50%; height:35px;")/>
+		 <input class="search-btn" type="submit" name="search" value="Search"/>
+	</form>
+	
+	
+			
 </div>
-
 
 
 <div class='nav'>
@@ -35,21 +37,24 @@
 <a href='#mouse'>Mouse</a>
 <a href='#kb'>keyboard</a>
 <a href='#lpt'>Laptop & Others</a>
-<a id ='login' href='#cart' style="color:Green;">View Carts</a>
-<a id='login' href='../server/staffc.php'>Staff Profile</a> 
-    <a id='login' onclick="document.getElementById('id02').style.display='block'">Register</a>
-    <a id='login' onclick="document.getElementById('id01').style.display='block'">Login</a>
+
+<a onclick="document.getElementById('id03').style.display='block'">search result</a>
+
+
+
+<a id='login' onclick="document.getElementById('id02').style.display='block'">Register</a>
+<a id='login' onclick="document.getElementById('id01').style.display='block'">Login</a>
 
 </div>
 
 
   <div id="id01" class="loginModal">
-    <form class="loginModal-content animate" action="../server/login.php" method="post">
+    <form class="loginModal-content animate" action="php/login.php" method="post">
 
         <div class="imgcontainer">
           <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
           <h2>Login Form</h2>
-          <img src="../img/anonymous.jpeg" alt="anonymous" class="anonymous">
+          <img src="img/anonymous.jpeg" alt="anonymous" class="anonymous">
         </div>
 
         <div class="container">
@@ -60,13 +65,13 @@
           <input id="password" type="password" placeholder="Enter Password" name="password" required>
 
           <button class="login" name="login" id="login_btn" type="submit" >Login</button>
-
+	  
 
 
           <label>
             <input type="checkbox" checked="checked" name="remember"> Remember me
           </label>
-	</div>
+      	</div>
 
         <div class="container" style="background-color:#f1f1f1">
           <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
@@ -76,12 +81,12 @@
       </div>
 
       <div id="id02" class="registerModal">
-        <form class="registerModal-content animate" action="../server/register.php" method="post">
+        <form class="registerModal-content animate" action="php/register.php" method="post">
 
             <div class="imgcontainer">
               <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
               <h2>Registration Form</h2>
-              <img src="../img/anonymous.jpeg" alt="anonymous" class="anonymous">
+              <img src="img/anonymous.jpeg" alt="anonymous" class="anonymous">
             </div>
 
             <div class="container">
@@ -106,75 +111,80 @@
             </div>
 
             <div class="container">
-              <a href=".loginModal"> <button type="button" class="cancelbtn">Back</button></a>
-
+              <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
             </div>
           </form>
           </div>
 
-<article id='home'>
-<?php include '../server/getitem.php';?>
-</article>
+<div id="id03" class="registerModal">
+<div class="container">
+ <button type="button" onclick="document.getElementById('id03').style.display='none'" class="cancelbtn">Cancel</button>
+ </div>
 
-<article id='i5' hidden='hidden'>
-<?php include '../server/get1item.php';?>
-</article>
+
+ <iframe name='myframe' height="1000px" width="1500px">
+</iframe>
+
+  
+</div>
+
+
+
+<article id='home'>
+<?php include 'php/getitem.php';?>
+</article> 
+
 
 <article id='buy' hidden='hidden'>
-<h4>Thanks for buying! </h4>
+<h4>Thanks for buying!</h4>
 </article>
-
-<article id='nonuser' hidden='hidden'>
-<h4>Sorry you are not a user!<br> please login or register first to buy products.</h4>
-</article>
-
 
 <article id='cpu' hidden='hidden'>
-<?php include '../server/getcpu.php';?>
+<?php include 'php/getcpu.php';?>
 </article>
 
 <article id='gpu' hidden='hidden'>
-<?php include '../server/getgpu.php';?>
+<?php include 'php/getgpu.php';?>
 </article>
 
 <article id='ram' hidden='hidden'>
-<?php include '../server/getram.php';?>
+<?php include 'php/getram.php';?>
 </article>
 
 <article id='mobo' hidden='hidden'>
-<?php include '../server/getmobo.php';?>
+<?php include 'php/getmobo.php';?>
 </article>
 
 <article id='moni' hidden='hidden'>
-<?php include '../server/getmoni.php';?>
+<?php include 'php/getmoni.php';?>
 </article>
 
 <article id='kb' hidden='hidden'>
-<?php include '../server/getkb.php';?>
+<?php include 'php/getkb.php';?>
 </article>
 
 <article id='lpt' hidden='hidden'>
-<?php include '../server/getlpt.php';?>
+<?php include 'php/getlpt.php';?>
 </article>
 
 <article id='acc' hidden='hidden'>
-<?php include '../server/getacc.php';?>
+<?php include 'php/getacc.php';?>
 </article>
 
 <article id='pcc' hidden='hidden'>
-<?php include '../server/getpcc.php';?>
+<?php include 'php/getpcc.php';?>
 </article>
 
 <article id='cpuc' hidden='hidden'>
-<?php include '../server/getcpuc.php';?>
+<?php include 'php/getcpuc.php';?>
 </article>
 
 <article id='mouse' hidden='hidden'>
-<?php include '../server/getmouse.php';?>
+<?php include 'php/getmouse.php';?>
 </article>
 
-<article id='cart' hidden='hidden'>
-<?php include '../server/getcart.php';?>
+<article id='search' hidden='hidden'>
+<?php include 'php/search.php';?>
 </article>
 
 
@@ -185,6 +195,26 @@
 
 
 
+
+
+<sript type="text/javascript" src="js/script.js"> </script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#loginmodal").click(function(){
+
+            $.ajax({
+                type: 'POST',
+                url: 'script.php',
+                success: function(data) {
+                    alert(data);
+                    $("p").text(data);
+
+                }
+            });
+   });
+});
+</script>
 
 <article id='help' hidden='hidden'>
 	  <div class="profilecontainer">
@@ -195,6 +225,9 @@
 		<h3>Product will then be delivered to address registered</h3>
 		<h4>More Information</h4>
 		<h3>Contanct: +61 8 9360 6000</h3>
+	<h4>Search?</h4>
+	<h3>Type down in the search bar above than click on the search. after ciking search the results wil be shown in the search result</h3>
+
       </div>
 	</article>
 	

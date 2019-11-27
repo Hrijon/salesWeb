@@ -267,10 +267,10 @@ section:after {
   footer{
     color: white;
     background-color: darkgray;
-   margin-top: 3300px;
-   /* padding: 8px;*/
-   height:100px;
-	
+position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;	
    
   }
   
@@ -279,9 +279,6 @@ section:after {
     text-align: left;
   }
 
-  .policy{
-    padding-left:900px;
-  }
 
   ul.breadcrumb {
     padding: 10px 16px;

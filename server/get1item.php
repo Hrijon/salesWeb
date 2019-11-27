@@ -18,8 +18,18 @@ if ($result->num_rows > 0) {
 //    " <p class='card-text'>". $row["Discription"]. "</p> <p><a href='#i5'><button>View Item</button></a></p> </div> </div> </div>";
 //echo "<br> ItemName: ". $row["ItemName"]. " - discription: ". $row["Discription"]. "<br>";
 
+if($_SESSION['username'] == 'rijan' OR $_SESSION['username'] == 'user3' OR$_SESSION['username'] == 'user2' OR$_SESSION['username'] == 'user1' ){ 
+$buy_item = "<p><a href='../webclient/index.php#buy'><button>Buy Item</button></a></p>";
+}
+else{
+$buy_item = "<p><a href='../webclient/index.php#nonuser'><button>Buy Item</button></a></p>";
+}
+
+$cart_item = "<p><input type='submit' name='cart' value='Add to Cart' class='btnaddaction'/><br><br>";
+
+
 echo "<div class='item'> <h2>". $_SESSION["var"] ."</h2> <p>". $row["Discription"]. "</p><h4>Price:". $row["Price"]. "</h4></div>".
-"</p> <p><a href='../webclient/index.php#buy'><button>Buy now</button></a></p>";
+"</p> $cart_item $buy_item </p>";
     
 
   }

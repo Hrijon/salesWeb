@@ -2,12 +2,12 @@
 <html> 
   <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel='stylesheet' href='css/styles.css'>
+		<link rel='stylesheet' href='../css/styles.css'>
         <title>Index Page</title>
-	<script type="text/javascript" src="js/script.js"></script>
+	<script type="text/javascript" src="../js/script.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="js/jquery-3.3.1.js"></script>	
-	<script src="js/index.js"></script>
+<script src="../js/jquery-3.3.1.js"></script>	
+	<script src="../js/index.js"></script>
 
   </head>
   
@@ -15,26 +15,12 @@
   
 <div class='header'>       
 	<form action="../server/search.php" method="POST">
-		 <strong class='title'>B&R PC</strong>
-	         <input class='search-bar' type='text'  placeholder='Search...' name='query' style = "width:50%; height:35px;")/>
-		 <input class="search-btn" type="submit" name="search" value="Search"/>
-	</form>
-        <!-- <div id="id05" class="registerModal">
-        	<form class="registerModal-content animate" action="register.php" method="post">
-			<p>hello this is search result.</p>
-		        <div class="container">
-				<ol>
-					<li> <?php
-						error_reporting(0);
-						echo $_POST['result']; ?>
-			                </li>
-				</ol>		
-            		</div>
-	</div>
-		</form> -->
-			
+		  <strong class='title'>B&R PC</strong>
+          <input class='search-bar' type='text'  placeholder='Search...' name='query' style = "width:50%; height:35px;")/>
+          <input class="search-btn" type="submit" name="search" value="Search"/>
+	</form>	
 </div>
-</div>
+
 
 
 <div class='nav'>
@@ -49,8 +35,8 @@
 <a href='#mouse'>Mouse</a>
 <a href='#kb'>keyboard</a>
 <a href='#lpt'>Laptop & Others</a>
-<a id ='login' href='#cart' style:color:Green;">View Carts</a>
-
+<a id ='login' href='#cart' style="color:Green;">View Carts</a>
+<a id='login' href='../server/staffc.php'>Staff Profile</a> 
     <a id='login' onclick="document.getElementById('id02').style.display='block'">Register</a>
     <a id='login' onclick="document.getElementById('id01').style.display='block'">Login</a>
 
@@ -63,7 +49,7 @@
         <div class="imgcontainer">
           <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
           <h2>Login Form</h2>
-          <img src="img/anonymous.jpeg" alt="anonymous" class="anonymous">
+          <img src="../img/anonymous.jpeg" alt="anonymous" class="anonymous">
         </div>
 
         <div class="container">
@@ -80,7 +66,6 @@
           <label>
             <input type="checkbox" checked="checked" name="remember"> Remember me
           </label>
-       <a href="#id02"> <input class="login" type="button" style="background-color: darkblue" value="Register modal"/></a>
 	</div>
 
         <div class="container" style="background-color:#f1f1f1">
@@ -96,7 +81,7 @@
             <div class="imgcontainer">
               <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
               <h2>Registration Form</h2>
-              <img src="img/anonymous.jpeg" alt="anonymous" class="anonymous">
+              <img src="../img/anonymous.jpeg" alt="anonymous" class="anonymous">
             </div>
 
             <div class="container">
@@ -138,6 +123,11 @@
 <article id='buy' hidden='hidden'>
 <h4>Thanks for buying!</h4>
 </article>
+
+<article id='nonuser' hidden='hidden'>
+<h4>Sorry you are not a user!<br> please login or register first to buy products.</h4>
+</article>
+
 
 <article id='cpu' hidden='hidden'>
 <?php include '../server/getcpu.php';?>
@@ -194,7 +184,6 @@
 
 
 
-<sript type="text/javascript" src="js/script.js"> </script>
 
 
 <article id='help' hidden='hidden'>

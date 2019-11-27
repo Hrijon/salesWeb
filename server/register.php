@@ -11,10 +11,15 @@
          $cpassword= $_POST['cpassword'];
 	$address = $_POST['address'];
 	$email = $_post['email'];
+	 $_SESSION['email']=$email;
+        $_SESSION['address']=$address;
+
+
       if($password==$cpassword)
       {
           $query= "select*from UserInfo WHERE username='$username'";
           $query_run = mysqli_query($con,$query);
+
 
           if(mysqli_num_rows($query_run)>0)
           {

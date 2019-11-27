@@ -1,7 +1,5 @@
-
 <?php
 ini_set('display_startup_errors', 1);	
-
 	session_start();
 	require'config.php';
 ?> 
@@ -135,7 +133,6 @@ if(isset($_POST['search']))
 {
     	$query = $_POST['query'];
    	$min_length = 1;
-
 	if(strlen($query) >= $min_length){ // if query length is more or equal minimum length then
        		$query = htmlspecialchars($query);
 		//$query = mysqli_real_escape_string($query);
@@ -147,17 +144,30 @@ if(isset($_POST['search']))
         // '%$query%' is what we're looking for, % means anything, for example if $query is Hello
         // it will match "hello", "Hello man", "gogohello", if you want exact match use `title`='$query'
         // or if you want to match just full word so "gogohello" is out use '% $query %' ...OR ... '$query %' ... OR ... '% $query'
-         
+
+if($_SESSION['username'] == 'rijan' OR $_SESSION['username'] == 'user3' OR$_SESSION['username'] == 'user2' OR$_SESSION['username'] == 'user1'){
+$buy_item = "<p><a href='../webclient/index.php#buy'><button>Buy Item</button></a></p>";
+}
+
+else{
+$buy_item = "<p><a href='../webclient/index.php#nonuser'><button>Buy Item</button></a></p>";
+}
+
+
+$cart_item = "<p><input type='submit' name='cart' value='Add to Cart' class='btnaddaction'/><br><br>";
+
+
        		 if(mysqli_num_rows($raw_results) > 0){ // if one or more rows are returned do following
             		while($results = mysqli_fetch_array($raw_results)){
             // $results = mysql_fetch_array($raw_results) puts data from database into array, while it's valid it does the loop
-                		$result = "<div class='column'> <div class='card' style='width: 18rem;'> <div class='card-body'> <h5 class='card-title'> ". $results["ItemName"].
-				" <p class='card-text'>". $results["Discription"]. "</p> <p><a href='#i5'><button>View Item</button></a></p> </div> </div> </div>";
-				echo ($result);			
+                		//$result = "<div class='column'> <div class='card' style='width: 18rem;'> <div class='card-body'> <h5 class='card-title'> ". $results["ItemName"].
+				//" <p class='card-text'>". $results["Discription"]. "</p> <p><a href='#i5'><button>View Item</button></a></p> </div> </div> </div>";
+				//echo ($result);			
+echo "<div class='column'> <div class='card' style='width: 18rem;'> <div class='card-body'> <h5 class='card-title'> ". $results["ItemName"].
+" <p class='card-text'>". $results["Discription"]."<br> InStock: ". $results["stock"] . "<br><h4> Price: </h4>$ " . $results["Price"].
+ "</p> $cart_item $buy_item  </div> </div> </div>";
 			//echo "<br> ItemName: ". $result["ItemName"]. " - discription: ". $result["Discription"]. "<br>";
-
 			//	header("Location: index.html?result=".$result);
-
 		}
                 // posts results gotten from database(title and text) you can also show id ($results['id'])
             	 }
@@ -170,7 +180,6 @@ if(isset($_POST['search']))
 else{ // if query length is less than minimum
     echo "Minimum length is ";
 } 
-
 ?>
 
 <script type="text/javascript" src="script.js"> </script>
