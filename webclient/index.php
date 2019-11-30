@@ -42,11 +42,7 @@
       <a id ='login' href='#cart' style="color:Green;">View Carts</a>
       <a id='login' href='../server/staffc.php'>Staff Profile</a> 
       <a id='login' onclick="document.getElementById('id02').style.display='block'">Register</a>
-      <a id='login' onclick="document.   Hello, welcome to B&R PC. we are a pc component shop that sells various parts for a pc such as CPU, GPU, Motherboard,
-                and others from different types of brands starting from Intel, Asus, MSI, and many more. we make pc building as easy 
-                a   Hello, welcome to B&R PC. we are a pc component shop that sells various parts for a pc such as CPU, GPU, Motherboard,
-                and others from different types of brands starting from Intel, Asus, MSI, and many more. we make pc building as easy 
-                atElementById('id01').style.display='block'">Login</a>
+      <a id='login' onclick="document.getElementById('id01').style.display='block'">Login</a>
     </div>
 
 <!-- login modal is an id which can only be run by clicking the login button on navbar. -->

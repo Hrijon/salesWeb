@@ -4,7 +4,7 @@
   <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel='stylesheet' href='../css/styles.css'>
-        <title>Index Page</title>
+        <title>login page</title>
 	<script type="text/javascript" src="../js/script.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="../js/jquery-3.3.1.js"></script>	
@@ -17,9 +17,12 @@
  	//session start will start the connection to the database where require  calls the php page of the connection code
 	session_start();
 	require'config.php';
-	
+
 //if error it will throw an error as connect error and die the server
 
+//if ($con->connect_error){
+  //  die("Connection failed: " . $con->connect_error);
+//}
 	if(isset($_POST['login']))
 	{
 		 $username= $_POST['username'];
