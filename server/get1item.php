@@ -1,13 +1,15 @@
 <?php
+
+//session start will start the connection to the database where require  calls the php page of the connection code
 	session_start();
 	require'config.php';
 	
-
+//if error it will throw an error as connect error and die the server
 if ($con->connect_error){
     die("Connection failed: " . $con->connect_error);
 }
 
-//include 'getitem.php?varname=<?php echo $var_value ';
+//session variable is a global variable which we can call from any php page under the same connection
 echo($_SESSION["var"]);
 $sql = "SELECT * FROM Items where ItemName='{$_SESSION['var']}";
 $result = $con->query($sql);
@@ -37,7 +39,7 @@ echo "<div class='item'> <h2>". $_SESSION["var"] ."</h2> <p>". $row["Discription
 } else {
     echo "0 results";
 }
-$con->close();
+$con->close(); //close will die the connection
 
 ?>
 

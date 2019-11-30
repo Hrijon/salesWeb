@@ -1,6 +1,9 @@
 <?php
+	//session start will start the connection to the database where require  calls the php page of the connection code
+
         session_start();
         require'config.php';
+//if error it will throw an error as connect error and die the server
 
 if ($con->connect_error){
     die("Connection failed: " . $con->connect_error);
@@ -40,6 +43,7 @@ echo "<div class='column'> <div class='card' style='width: 18rem;'> <div class='
     echo "0 results";
 }
 
+$con->close(); //close will die the connection
 
 
 ?>

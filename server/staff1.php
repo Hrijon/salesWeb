@@ -27,7 +27,8 @@ $re = "<strong> Item No: </strong>". $results['ItemID']. "<strong> Item Name: </
     echo "0 results";
 }
 
-$con->close();
+$con->close(); //close will die the connection
+
 ?>
 
 </body>

@@ -4,9 +4,11 @@
 <body>
 
 <?php
+	//session start will start the connection to the database where require  calls the php page of the connection code
 	session_start();
 	require'config.php';
-
+	
+//if error it will throw an error as connect error and die the server
 
 if ($con->connect_error) {
     die("Connection failed: " . $con->connect_error);
@@ -38,7 +40,8 @@ $re = "<strong> Item No: </strong>". $results['ItemID']. "<strong> Item Name: </
     echo "0 results";
 }
 
-$con->close();
+$con->close(); //close will die the connection
+
 ?>
 
 </body>

@@ -1,7 +1,13 @@
 <?php
 ini_set('display_startup_errors', 1);	
+	//session start will start the connection to the database where require  calls the php page of the connection code
 	session_start();
 	require'config.php';
+	
+//if error it will throw an error as connect error and die the server
+if ($con->connect_error){
+  die("Connection failed: " . $con->connect_error);
+}
 ?> 
 <!DOCTYPE html> 
 <html> 
